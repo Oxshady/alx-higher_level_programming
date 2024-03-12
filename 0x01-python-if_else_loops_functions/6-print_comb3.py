@@ -6,5 +6,5 @@ for x in range(10):
         if y > x:
             if x == 8:
                 print("{:d}{:d}".format(x, y))
-            else: 
+            else:
                 print("{:d}{:d}".format(x, y), end=", ")
