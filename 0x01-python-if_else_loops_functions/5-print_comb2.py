@@ -2,6 +2,6 @@
 for x in range(10):
     for z in range(10):
         if z == 9 and x == 9:
-            print(f"{x:d}{z:d}")
+            print("{:d}{:d}".format(x, z))
         else:
-            print(f"{x:d}{z:d}", end=", ")
+            print("{:d}{:d}".format(x, z), end=", ")
