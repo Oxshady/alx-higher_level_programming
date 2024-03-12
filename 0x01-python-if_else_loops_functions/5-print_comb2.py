@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-for x in range(10):
-    for z in range(10):
-        if z == 9 and x == 9:
-            print("{:d}{:d}".format(x, z))
-        else:
-            print("{:d}{:d}".format(x, z), end=", ")
+for x in range(100):
+    if x != 99:
+        print("{:d}".format(x).zfill(2), end=", ")
+    else:
+        print("{:d}".format(x).zfill(2))
