@@ -21,4 +21,4 @@ elif number < 0:
         print(f"Last digit of {number:d} is {LD:d} and is 0")
     elif LD < 6 and LD != 0:
         quote = "and is less than 6 and not 0"
-        print(f"Last digit of {number:d} is {LD:d} and is {quote}")
+        print(f"Last digit of {number:d} is {LD:d} and {quote}")
