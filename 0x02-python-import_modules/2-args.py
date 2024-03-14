@@ -7,7 +7,7 @@ if __name__ == "__main__":
         print("{}".format("1 argument:"))
         print("{:d}: {}".format(len(argv) - 1, argv[len(argv) - 1]))
     else:
-        print("{} argument:".format(len(argv) - 1))
+        print("{} arguments:".format(len(argv) - 1))
         counter = 0
         for token in argv:
             counter += 1
