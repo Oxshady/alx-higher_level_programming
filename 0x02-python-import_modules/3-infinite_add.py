@@ -11,4 +11,5 @@ if __name__ == "__main__":
             if counter == 1:
                 continue
             sum += int(argv[counter - 1])
-    print("{:d}".format(sum))
+    if len(argv) > 1:
+    	print("{:d}".format(sum))
