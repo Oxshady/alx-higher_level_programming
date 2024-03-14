@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 from sys import argv
-if len(argv) == 1:
-    print("{}".format("0 arguments."))
-else:
-    if len(argv) == 2:
-        print("{} argument:".format(len(argv) - 1))
+if __name__ == "__main__":
+    if len(argv) == 1:
+        print("{}".format("0 arguments."))
     else:
-        print("{} argument:".format(len(argv) - 1))
-    counter = 0
-    for token in argv:
-        counter += 1
-        if counter == 1:
-            continue
+        if len(argv) == 2:
+            print("{} argument:".format(len(argv) - 1))
         else:
-            print("{:d}: {}".format(counter - 1, token))
+            print("{} argument:".format(len(argv) - 1))
+        counter = 0
+        for token in argv:
+            counter += 1
+            if counter == 1:
+                continue
+            else:
+                print("{:d}: {}".format(counter - 1, token))
