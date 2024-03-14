@@ -12,4 +12,4 @@ if __name__ == "__main__":
                 continue
             sum += int(argv[counter - 1])
     if len(argv) > 1:
-    	print("{:d}".format(sum))
+        print("{:d}".format(sum))
