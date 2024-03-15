@@ -14,3 +14,4 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(argv[1], argv[3], mul(int(argv[1]), int(argv[3]))))
     elif argv[2] == "-":
         print("{} / {} = {}".format(argv[1], argv[3], div(int(argv[1]), int(argv[3]))))
+    
