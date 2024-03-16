@@ -5,6 +5,5 @@ def print_reversed_list_integer(my_list=[]):
     x = 0
     for i in new:
         print("{:d}".format(new[x]))
-        x +=1
-    del(new)
-
+        x += 1
+    del (new)
