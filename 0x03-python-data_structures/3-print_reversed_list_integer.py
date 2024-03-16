@@ -6,4 +6,3 @@ def print_reversed_list_integer(my_list=[]):
     for i in new:
         print("{:d}".format(new[x]))
         x += 1
-    del (new)
