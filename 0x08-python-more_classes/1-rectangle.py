@@ -24,7 +24,7 @@ class Rectangle:
         Instantiation with optional width and height:
         def __init__(self, width=0, height=0):
     """
-    def __init__(self, width=0, height=0) -> None:
+    def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
 
