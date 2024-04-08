@@ -51,9 +51,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
-    def __str__(self) -> str:
-        f"{{'height': {self.__height}, 'width': {self.__width}}}"
-
-    def __repr__(self) -> str:
-        f"{{'height': {self.__height}, 'width': {self.__width}}}"
