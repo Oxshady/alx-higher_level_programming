@@ -24,7 +24,7 @@ class Rectangle:
         Instantiation with optional width and height:
         def __init__(self, width=0, height=0):
     """
-    def __init__(self, width=0, height=0):
+    def __init__(self, width=0, height=0) -> None:
         self.__width = width
         self.__height = height
 
@@ -51,3 +51,9 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    def __str__(self) -> str:
+        f"{{'height': {self.__height}, 'width': {self.__width}}}"
+
+    def __repr__(self) -> str:
+        f"{{'height': {self.__height}, 'width': {self.__width}}}"
