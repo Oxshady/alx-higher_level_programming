@@ -62,6 +62,8 @@ class Rectangle:
 
     def __str__(self):
         rectangle_str = ""
+        if self.__width == 0 or self.__height == 0:
+            return rectangle_str  # Return empty string if either width or height is 0
         for i in range(self.height):
             rectangle_str += "#" * self.width + "\n"
         return rectangle_str[:-1]
