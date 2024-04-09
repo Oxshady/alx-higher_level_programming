@@ -5,6 +5,7 @@ this module contain function that
 print hi my name is <first name> <last name>
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     function that prints hi my name is <first name> <last name>
@@ -18,5 +19,3 @@ def say_my_name(first_name, last_name=""):
         print("My name is {:s} {:s}".format(first_name, last_name))
     except NameError:
         raise NameError("enter correct value")
-if __name__ == "__main__":
-    say_my_name("shadi", "mahmoud")
