@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"python.h": "c",
+		"time.h": "c",
+		"stdio.h": "c",
+		"pyconfig.h": "c",
+		"pymacconfig.h": "c",
+		"patchlevel.h": "c"
+	}
+}

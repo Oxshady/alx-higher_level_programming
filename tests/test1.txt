@@ -1,0 +1,3 @@
+import new.py
+>>> new.unpredictable(MyClass()) #doctest: +ELLIPSIS
+[<doctest_ellipsis.MyClass object at 0x...>]
