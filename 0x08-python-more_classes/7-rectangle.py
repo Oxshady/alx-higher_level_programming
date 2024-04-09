@@ -71,10 +71,10 @@ class Rectangle:
             return rectangle_st
         for i in range(self.height):
             if isinstance(Rectangle.print_symbol, str):
-                rectangle_st += str(Rectangle.print_symbol) * self.width + "\n"
+                rectangle_st += str(self.print_symbol) * self.__width + "\n"
             if isinstance(Rectangle.print_symbol, (tuple, list, set)):
                 for i in Rectangle.print_symbol:
-                    rectangle_st += str(i) * self.width + "\n"
+                    rectangle_st += str(i) * self.__width + "\n"
         return rectangle_st[:-1]
 
     def __repr__(self):
