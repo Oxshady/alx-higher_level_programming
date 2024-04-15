@@ -10,5 +10,4 @@ class MyList(list):
     class MyList that inherits from list
     """
     def print_sorted(self):
-        new = sorted(self)
-        print(new)
+        print(sorted(self.copy()))
