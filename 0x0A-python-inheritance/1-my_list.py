@@ -10,5 +10,6 @@ class MyList(list):
     class MyList that inherits from list
     """
     def print_sorted(self):
-        """print the list in acc ord"""
-        print(sorted(self.copy()))
+        """sort list then print it"""
+        new = sorted(self)
+        print(new)
