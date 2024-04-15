@@ -12,4 +12,3 @@ class MyList(list):
     def print_sorted(self):
         new = sorted(self)
         print(new)
-        del (new)
