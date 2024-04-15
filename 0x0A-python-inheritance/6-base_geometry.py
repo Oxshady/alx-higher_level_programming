@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-module contain class BaseGeometry that contain 
+module contain class BaseGeometry that contain
 Public instance method: def area(self):
 that raises an Exception with the message area() is not implemented
 """
@@ -8,7 +8,7 @@ that raises an Exception with the message area() is not implemented
 
 class BaseGeometry:
     """
-    contain class BaseGeometry that contain 
+    contain class BaseGeometry that contain
     Public instance method: def area(self):
     that raises an Exception with the message area() is not implemented    """
     def area(self):
