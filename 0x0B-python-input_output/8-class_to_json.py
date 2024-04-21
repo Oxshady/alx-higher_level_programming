@@ -10,7 +10,6 @@ def class_to_json(obj):
     """
     json_dict = {}
     for key, value in obj.__dict__.items():
-        # Exclude methods and attributes starting with '__'
         if not callable(value) and not key.startswith("__"):
             json_dict[key] = value
     return json_dict
