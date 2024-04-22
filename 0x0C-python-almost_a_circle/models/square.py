@@ -8,12 +8,29 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-def display(self):
+    def __str__(self):
         """
 		overrides __str__
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
 
+    @property
+    def size(self):
+        """
+        size getter
+        """
+        return (self.__size)
+
+    @size.setter
+    def size(self, S):
+        """
+        size setter
+        """
+        if type(S) is not int:
+            raise TypeError("height must be an integer")
+        if S <= 0:
+            raise ValueError("height must be > 0")
+        self.__size = S
 if __name__ == "__main__":
 
     s1 = Square(5)

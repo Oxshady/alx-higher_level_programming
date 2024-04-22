@@ -122,3 +122,15 @@ class RectangleTest(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(r1.y, 5)
         r1.update(89, 2, 3, 4, 5, 6)
+
+    def test_kwargs(self):
+        """
+        test dictionary
+        """
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5, 6)
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)

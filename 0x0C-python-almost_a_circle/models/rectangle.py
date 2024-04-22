@@ -129,21 +129,36 @@ class Rectangle(Base):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
-    def update(self, *args):
+    # def update(self, *args):
+    #     """
+    #     update instance of rectangle
+    #     """
+    #     for i  in range(len(args)):
+    #         if i == 0:
+    #             self.id = args[i]
+    #         elif i == 1:
+    #             self.width = args[i]
+    #         elif i == 2:
+    #             self.height = args[i]
+    #         elif i == 3:
+    #             self.x = args[i]
+    #         elif i == 4:
+    #             self.y = args[i]
+    def update(self, **kwargs):
         """
         update instance of rectangle
         """
-        for i  in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            elif i == 1:
-                self.width = args[i]
-            elif i == 2:
-                self.height = args[i]
-            elif i == 3:
-                self.x = args[i]
-            elif i == 4:
-                self.y = args[i]
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = value
+            elif key == "width":
+                self.width = value
+            elif key == "height":
+                self.height = value
+            elif key == "x":
+                self.x = value
+            elif key == "y":
+                self.y = value
 if __name__ == "__main__":
     r2 = Rectangle(3, 3, 22, 22)
     r2.display()
