@@ -179,9 +179,3 @@ class Rectangle(Base):
             turtle.right(90)
             turtle.forward(self.height)
             turtle.right(90)
-if __name__ == "__main__":
-    r2 = Rectangle(3, 3, 22, 22)
-    r2.display()
-
-    r3 = Rectangle(10, 2, 0, 0, 12)
-    print(r3.id)
