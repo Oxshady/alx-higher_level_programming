@@ -32,8 +32,8 @@ class RectangleTest(unittest.TestCase):
         test with and without id
         """
         self.assertEqual(self.r1.id, 50)
-        self.assertEqual(self.r2.id, 1)
-        self.assertEqual(self.r3.id, 2)
+        self.assertEqual(self.r2.id, 3)
+        self.assertEqual(self.r3.id, 4)
 
     def test_width(self):
         """
