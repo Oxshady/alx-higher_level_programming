@@ -41,6 +41,10 @@ class Rectangle(Base):
         """
         widht setter
         """
+        if type(Width) is not int:
+            raise TypeError("width must be an integer")
+        if Width <= 0:
+            raise ValueError("width must be > 0")
         self.__width = Width
 
     @property
@@ -55,6 +59,10 @@ class Rectangle(Base):
         """
         height setter
         """
+        if type(Height) is not int:
+            raise TypeError("height must be an integer")
+        if Height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = Height
 
     @property
@@ -69,6 +77,10 @@ class Rectangle(Base):
         """
         x setter
         """
+        if type(X) is not int:
+            raise TypeError("x must be an integer")
+        if X < 0:
+            raise ValueError("x must be >= 0")
         self.__x = X
 
     @property
@@ -83,14 +95,16 @@ class Rectangle(Base):
         """
         y setter
         """
+        if type(Y) is not int:
+            raise TypeError("y must be an integer")
+        if Y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = Y
 
 
 if __name__ == "__main__":
-    r1 = Rectangle(10, 2)
-    print(r1.id)
 
-    r2 = Rectangle(2, 10)
+    r2 = Rectangle(10, 10, -2, -2)
     print(r2.id)
 
     r3 = Rectangle(10, 2, 0, 0, 12)
