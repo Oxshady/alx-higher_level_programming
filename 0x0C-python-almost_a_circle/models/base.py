@@ -52,7 +52,19 @@ class Base:
         file = "{}.json".format(cls.__name__)
         with open(file, 'w') as f:
             json.dump(cls.to_json_string(list_objs), f)
-        
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Base":
+            return None
+
+        if cls.__name__ == "Rectangle":
+            dum = cls(1, 1, 1)
+            dum.update(**dictionary)
+            return dum
+    
         
 
 if __name__ == "__main__":
