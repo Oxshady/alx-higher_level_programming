@@ -70,3 +70,24 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(self.r1.y, 3)
         self.assertEqual(self.r2.y, 3)
         self.assertEqual(self.r3.y, 0)
+
+    def test_exception(self):
+        """
+        test exception
+        """
+        with self.assertRaises(TypeError):
+            r4 = Rectangle("10", 10, 20, 20)
+        with self.assertRaises(TypeError):
+            r4 = Rectangle(10, "10", 20, 20)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(0, 10, 20,  20)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(-1, 10, 20, 20)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, -1, 20, 20)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, 0, 20, 20)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(10, 10, -1, 2)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(-1, 10, 20, -20)
