@@ -33,6 +33,18 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        write json strings to file
+        """
+        if list_objs is None:
+            list_objs = []
+        file = "{}.json".format(cls.__name__)
+        with open(file, 'w') as f:
+            json.dump(cls.to_json_string(list_objs), f)
+        
+        
 
 if __name__ == "__main__":
     unittest.main()
