@@ -4,6 +4,7 @@ contain base class
 """
 
 import unittest
+import json
 
 
 class Base:
@@ -46,7 +47,14 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base5.id, 14.1)
         self.assertEqual(base6.id, 3)
         self.assertEqual(base7.id, 4)
-
+    def to_json_string(list_dictionaries):
+        """
+        returns the JSON string representation of list_dictionaries
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
 
 if __name__ == "__main__":
     unittest.main()
