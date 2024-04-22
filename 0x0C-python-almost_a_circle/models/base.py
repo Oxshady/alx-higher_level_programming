@@ -33,6 +33,15 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+    def from_json_string(json_string):
+        """
+        returns the list of the JSON string representation json_string
+        """
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
