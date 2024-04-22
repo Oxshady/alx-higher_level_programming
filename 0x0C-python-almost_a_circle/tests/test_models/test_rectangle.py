@@ -91,3 +91,34 @@ class RectangleTest(unittest.TestCase):
             r4 = Rectangle(10, 10, -1, 2)
         with self.assertRaises(ValueError):
             r4 = Rectangle(-1, 10, 20, -20)
+
+    def test_area(self):
+        """
+        test area
+        """
+        self.assertEqual(self.r1.area(), 200)
+        self.assertEqual(self.r2.area(), 600)
+        self.assertEqual(self.r3.area(), 600)
+
+    def test_str(self):
+        """
+        test str
+        """
+        self.assertEqual(self.r1.str(),"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}> - <{self.width}>/<{self.height}>")
+
+    def test_update(self):
+        """
+        test update
+        """
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.id, 89)
+        r1.update(89, 2)
+        self.assertEqual(r1.width, 2)
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.height, 3)
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.x, 4)
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.y, 5)
+        r1.update(89, 2, 3, 4, 5, 6)

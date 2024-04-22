@@ -101,11 +101,52 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = Y
 
+    def area(self):
+        """
+        area of rectangle
+        """
+        return (self.width * self.height)
 
+    def display(self):
+        """
+        display rectangle
+        """
+        for i in range(self.height):
+            for ii in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self) -> str:
+        """
+        overriding __str__
+        """
+        return f"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}> - <{self.width}>/<{self.height}>"
+    def display(self):
+        """
+        display instance of rectangle taking care of x and y
+        """
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
+    def update(self, *args):
+        """
+        update instance of rectangle
+        """
+        for i  in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            elif i == 1:
+                self.width = args[i]
+            elif i == 2:
+                self.height = args[i]
+            elif i == 3:
+                self.x = args[i]
+            elif i == 4:
+                self.y = args[i]
 if __name__ == "__main__":
-
-    r2 = Rectangle(10, 10, -2, -2)
-    print(r2.id)
+    r2 = Rectangle(3, 3, 22, 22)
+    r2.display()
 
     r3 = Rectangle(10, 2, 0, 0, 12)
     print(r3.id)
