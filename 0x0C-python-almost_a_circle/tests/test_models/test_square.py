@@ -11,6 +11,8 @@ class TestSquare(unittest.TestCase):
     """
     test for square class
     """
+    def setUp(self):
+        self.square = Square(5)
     def test_id(self):
         """
         test class with and without id
@@ -32,3 +34,24 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(type(s3.id), int)
         self.assertEqual(type(s4.id), int)
         self.assertEqual(type(s5.id), int)
+    def test_update_with_positional_args(self):
+        self.square.update(1, 2, 3, 4)
+        self.assertEqual(self.square.id, 1)
+        self.assertEqual(self.square.size, 2)
+        self.assertEqual(self.square.x, 3)
+        self.assertEqual(self.square.y, 4)
+
+    def test_update_with_kwargs(self):
+        self.square.update(id=10, size=15, x=20, y=25)
+        self.assertEqual(self.square.id, 10)
+        self.assertEqual(self.square.size, 15)
+        self.assertEqual(self.square.x, 20)
+        self.assertEqual(self.square.y, 25)
+
+    def test_update_with_invalid_args(self):
+        with self.assertRaises(ValueError):
+            self.square.update(1, 2, 3, 4, 5)
+
+    def test_update_with_invalid_kwargs(self):
+        with self.assertRaises(ValueError):
+            self.square.update(id=10, size=15, x=20, y=25, z=25)

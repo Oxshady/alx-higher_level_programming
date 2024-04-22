@@ -159,6 +159,11 @@ class Rectangle(Base):
                 self.x = value
             elif key == "y":
                 self.y = value
+    def to_dictionary(self):
+        """
+        to dictionary
+        """
+        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
 if __name__ == "__main__":
     r2 = Rectangle(3, 3, 22, 22)
     r2.display()
