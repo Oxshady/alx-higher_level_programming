@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import unittest
+import turtle
+
 """
 contain rectangle class inherits from base
 """
@@ -164,6 +166,19 @@ class Rectangle(Base):
         to dictionary
         """
         return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+    def draw(self, window):
+        """
+        draw the Rectangle
+        """
+        turtle.up()
+        turtle.goto(self.x, self.y)
+        turtle.down()
+
+        for _ in range(2):
+            turtle.forward(self.width)
+            turtle.right(90)
+            turtle.forward(self.height)
+            turtle.right(90)
 if __name__ == "__main__":
     r2 = Rectangle(3, 3, 22, 22)
     r2.display()

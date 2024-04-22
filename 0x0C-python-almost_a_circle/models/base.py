@@ -5,7 +5,9 @@ contain base class
 
 import unittest
 import json
-
+import os
+import turtle
+import csv
 
 class Base:
     """
@@ -64,9 +66,78 @@ class Base:
             dum = cls(1, 1, 1)
             dum.update(**dictionary)
             return dum
-    
-        
+    @classmethod
+    def load_from_file(cls):
+        """
+        deserialization
+        """
+        filename = "{}.json".format(cls.__name__)
+        if not os.path.exists(filename):
+            return []
 
+        with open(filename, 'r') as f:
+            list_objs = cls.from_json_string(json.load(f))
+
+        return list_objs
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        save to file in CSV format
+        """
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+
+            for obj in list_objs:
+                if isinstance(obj, cls):
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    elif cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        load from file in CSV format
+        """
+        filename = "{}.csv".format(cls.__name__)
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, 'r', newline='') as f:
+            reader = csv.reader(f)
+
+            list_objs = []
+            for row in reader:
+                if len(row) == 4:
+                    if cls.__name__ == "Rectangle":
+                        list_objs.append(Rectangle(*map(int, row)))
+                    elif len(row) == 4:
+                        if cls.__name__ == "Square":
+                            list_objs.append(Square(*map(int, row)))
+                    else:
+                        raise ValueError("Invalid format for {}".format(cls.__name__))
+            return list_objs
+    @classmethod
+    def draw(cls, list_rectangles, list_squares):
+        """
+        draw all the Rectangles and Squares
+        """
+        window = turtle.Screen()
+        window.setup(800, 600)
+
+        window.bgcolor("white")
+
+        window.title("Drawing")
+
+        for rect in list_rectangles:
+            rect.draw(window)
+
+        for square in list_squares:
+            square.draw(window)
+        window.mainloop()
 if __name__ == "__main__":
     unittest.main()
     b1 = Base()

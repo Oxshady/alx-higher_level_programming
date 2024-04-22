@@ -3,6 +3,7 @@
 contain square inheritc from Rectangle class
 """
 
+import turtle
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
@@ -60,6 +61,18 @@ def update(self, *args, **kwargs):
         returns the dictionary representation of a Square
         """
         return {'id': self.id,'size': self.size, 'x': self.x, 'y': self.y}
+    def draw(self, window):
+        """
+        draw the Square
+        """
+        turtle.up()
+        turtle.goto(self.x, self.y)
+        turtle.down()
+
+        for _ in range(4):
+            turtle.forward(self.size)
+            turtle.right(90)
+
 if __name__ == "__main__":
 
     s1 = Square(5)
