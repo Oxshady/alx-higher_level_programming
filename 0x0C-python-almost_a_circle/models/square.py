@@ -9,6 +9,15 @@ from rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """
+    square inheritc from Rectangle class
+
+    Args:
+    size of the square
+    x of the square
+    y of the square
+    id of the square
+    """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
