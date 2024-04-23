@@ -106,6 +106,23 @@ class RectangleTest(unittest.TestCase):
         """
         self.assertEqual(self.r1.str(),"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}> - <{self.width}>/<{self.height}>")
 
+    def test_str_rectangle():
+        r1 = Rectangle(10, 12)
+        assert str(r1) == "[Rectangle] (<id>) <x>/<y> - <width>/<height>"
+        assert str(r1) == "[Rectangle] (<id>) <0>/<1> - <10>/<12>"
+
+        r2 = Rectangle(12, 10)
+        assert str(r2) == "[Rectangle] (<id>) <1>/<0> - <12>/<10>"
+
+        r3 = Rectangle(12, 10, 3)
+        assert str(r3) == "[Rectangle] (<id>) <3>/<0> - <12>/<10>"
+
+        r4 = Rectangle(12, 10, 3, 6)
+        assert str(r4) == "[Rectangle] (<id>) <3>/<6> - <12>/<10>"
+
+        r5 = Rectangle(12, 10, 3, 6, 8)
+        assert str(r5) == "[Rectangle] (<id>) <8>/<6> - <12>/<10>"
+
     def test_update(self):
         """
         test update
