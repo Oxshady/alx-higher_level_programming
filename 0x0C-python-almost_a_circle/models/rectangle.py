@@ -6,7 +6,7 @@ contain rectangle class inherits from base
 
 import unittest
 import turtle
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
