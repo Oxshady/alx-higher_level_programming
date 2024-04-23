@@ -25,8 +25,8 @@ class Square(Rectangle):
         """
         overrides __str__
         """
-        s = "[Square] ({}) {}/{}\
-        - {}".format(self.id, self.x, self.y, self.width)
+        s = "[Square] ({:d}) {:d}/{:d}\
+        - {:d}".format(self.id, self.x, self.y, self.width)
         return s
 
     @property
