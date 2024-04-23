@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-import unittest
-import turtle
 
 """
 contain rectangle class inherits from base
 """
 
-
+import unittest
+import turtle
 from base import Base
 
 
