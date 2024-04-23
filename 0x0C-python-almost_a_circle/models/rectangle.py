@@ -117,12 +117,12 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def __str__(self) -> str:
+    def __str__(self):
         """
         overriding __str__
         """
-        s = f"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}>\
-        - <{self.width}>/<{self.height}>"
+        s = "[Rectangle] (<{}>) <{}>/<{}> - <{}>/<{}\
+        >".format(self.id, self.x, self.y, self.width, self.height)
         return s
 
     def display(self):
