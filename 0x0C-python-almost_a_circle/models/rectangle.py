@@ -122,7 +122,10 @@ class Rectangle(Base):
         """
         overriding __str__
         """
-        return f"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}> - <{self.width}>/<{self.height}>"
+        s = f"[Rectangle] (<{self.id}>) <{self.x}>/<{self.y}>\
+        - <{self.width}>/<{self.height}>"
+        return s
+
     def display(self):
         """
         display instance of rectangle taking care of x and y
@@ -146,6 +149,7 @@ class Rectangle(Base):
     #             self.x = args[i]
     #         elif i == 4:
     #             self.y = args[i]
+
     def update(self, **kwargs):
         """
         update instance of rectangle
@@ -161,11 +165,14 @@ class Rectangle(Base):
                 self.x = value
             elif key == "y":
                 self.y = value
+
     def to_dictionary(self):
         """
         to dictionary
         """
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
+
     def draw(self, window):
         """
         draw the Rectangle

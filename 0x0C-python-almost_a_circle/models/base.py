@@ -3,11 +3,13 @@
 contain base class
 """
 
+
 import unittest
 import json
 import os
 import turtle
 import csv
+
 
 class Base:
     """
@@ -35,6 +37,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
     def from_json_string(json_string):
         """
         returns the list of the JSON string representation json_string
@@ -54,6 +57,7 @@ class Base:
         file = "{}.json".format(cls.__name__)
         with open(file, 'w') as f:
             json.dump(cls.to_json_string(list_objs), f)
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -66,6 +70,7 @@ class Base:
             dum = cls(1, 1, 1)
             dum.update(**dictionary)
             return dum
+
     @classmethod
     def load_from_file(cls):
         """
@@ -89,13 +94,12 @@ class Base:
         with open(filename, 'w', newline='') as f:
             writer = csv.writer(f)
 
-            for obj in list_objs:
-                if isinstance(obj, cls):
+            for o in list_objs:
+                if isinstance(o, cls):
                     if cls.__name__ == "Rectangle":
-                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                        writer.writerow([o.id, o.width, o.height, o.x, o.y])
                     elif cls.__name__ == "Square":
-                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
-
+                        writer.writerow([o.id, o.size, o.x, o.y])
 
     @classmethod
     def load_from_file_csv(cls):
@@ -118,8 +122,10 @@ class Base:
                         if cls.__name__ == "Square":
                             list_objs.append(Square(*map(int, row)))
                     else:
-                        raise ValueError("Invalid format for {}".format(cls.__name__))
+                        c = "Invalid format for {}".format(cls.__name__)
+                        raise ValueError(c)
             return list_objs
+
     @classmethod
     def draw(cls, list_rectangles, list_squares):
         """
@@ -138,4 +144,3 @@ class Base:
         for square in list_squares:
             square.draw(window)
         window.mainloop()
-
