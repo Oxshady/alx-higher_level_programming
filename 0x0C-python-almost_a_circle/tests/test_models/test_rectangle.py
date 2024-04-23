@@ -123,6 +123,33 @@ class RectangleTest(unittest.TestCase):
         r5 = Rectangle(12, 10, 3, 6, 8)
         assert str(r5) == "[Rectangle] (<id>) <8>/<6> - <12>/<10>"
 
+    def test_rectangle_update_id(self):
+        self.rectangle.update(12)
+        self.assertEqual(12, self.rectangle.id)
+
+    def test_rectangle_update_id_and_width(self):
+        self.rectangle.update(12, 4)
+        self.assertEqual(4, self.rectangle.width)
+
+    def test_rectangle_update_id_and_height(self):
+        self.rectangle.update(12, 3)
+        self.assertEqual(3, self.rectangle.height)
+
+    def test_rectangle_update_id_and_x(self):
+        self.rectangle.update(12, 2)
+        self.assertEqual(2, self.rectangle.x)
+
+    def test_rectangle_update_id_and_y(self):
+        self.rectangle.update(12, 1)
+        self.assertEqual(1, self.rectangle.y)
+
+    def test_rectangle_update_all_attributes(self):
+        self.rectangle.update(12, 4, 3, 2, 1)
+        self.assertEqual(12, self.rectangle.id)
+        self.assertEqual(4, self.rectangle.width)
+        self.assertEqual(3, self.rectangle.height)
+        self.assertEqual(2, self.rectangle.x)
+        self.assertEqual(1, self.rectangle.y)
     def test_update(self):
         """
         test update
