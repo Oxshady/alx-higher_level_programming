@@ -1,2 +1,2 @@
 -- delete records from secon_table
-DELETE FROM secon_table WHERE score <= 5;
+DELETE FROM second_table WHERE score <= 5;
