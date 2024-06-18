@@ -3,12 +3,12 @@ const num = Number(process.argv[2])
 if (isNaN(num)) {
 	console.log('Missing size')
 } else {
-	let hashtag = "";
+	let sym = "";
 	for (let i = 0; i < num; i++) {
 		for (let j = 0; j < num; j++) {
-			hashtag += "X";
+			sym += "X";
 		}
-		console.log(hashtag);
-		hashtag = "";
+		console.log(sym);
+		sym = "";
 	}
 }
