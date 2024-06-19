@@ -6,7 +6,8 @@ class Square extends Rectangle {
   }
 
   charPrint (c) {
-    let sym = '', leng = 0;
+    let sym = '';
+    let leng = 0;
     if (c === undefined) {
       c = 'X';
     }
