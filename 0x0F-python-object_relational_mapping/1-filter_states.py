@@ -17,7 +17,7 @@ try:
         cursor = connection.cursor()
         with cursor:
             cursor.execute(
-                "SELECT * from states WHERE name Like 'N%' AND BINARY SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC")
+                "SELECT * from states WHERE name Like 'N%' ORDER BY id ASC")
             for row in cursor.fetchall():
                 print(row)
 except MySQLdb.Error as err:
