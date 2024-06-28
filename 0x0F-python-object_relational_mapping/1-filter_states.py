@@ -11,13 +11,14 @@ if len(argv) < 4:
 db_user = argv[1]
 db_pass = argv[2]
 db_name = argv[3]
+s = "SELECT * from states WHERE BINARY SUBSTRING(name, 1, 1) = "
+s = s + "'N' ORDER BY id ASC"
 try:
     connection = MySQLdb.connect(user=db_user, passwd=db_pass, db=db_name)
     with connection:
         cursor = connection.cursor()
         with cursor:
-            cursor.execute(
-                "SELECT * from states WHERE BINARY SUBSTRING(name, 1, 1) = 'N' ORDER BY id ASC")
+            cursor.execute(s)
             for row in cursor.fetchall():
                 print(row)
 except MySQLdb.Error as err:
