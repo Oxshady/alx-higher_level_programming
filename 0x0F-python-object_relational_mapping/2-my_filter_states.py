@@ -12,7 +12,7 @@ db_user = argv[1]
 db_pass = argv[2]
 db_name = argv[3]
 state = argv[4]
-s = "SELECT * from states WHERE name = %s ORDER BY id ASC"
+s = "SELECT * from states WHERE name = '{}' ORDER BY id ASC".format(state)
 try:
     connection = MySQLdb.connect(host='localhost',
                                  port=3306,
@@ -22,7 +22,7 @@ try:
     with connection:
         cursor = connection.cursor()
         with cursor:
-            cursor.execute(s, (state,))
+            cursor.execute(s)
             for row in cursor.fetchall():
                 print(row)
 except MySQLdb.Error as err:
