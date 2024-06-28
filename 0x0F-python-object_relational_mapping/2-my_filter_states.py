@@ -24,8 +24,8 @@ if __name__ == "__main__":
                                      db=db_name)
         with connection:
             cursor = connection.cursor()
-            query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
-            cursor.execute(query.format(state))
+            q = "SELECT * FROM states WHERE BINARY name= '{}' ORDER BY id ASC"
+            cursor.execute(q.format(state))
             for row in cursor.fetchall():
                 print(row)
     except MySQLdb.Error as err:
