@@ -5,6 +5,9 @@ Results must be sorted in ascending order by states.id
 """
 import MySQLdb
 from sys import argv
+if len(argv) < 5:
+    print("4 argument required")
+    exit()
 db_user = argv[1]
 db_pass = argv[2]
 db_name = argv[3]
