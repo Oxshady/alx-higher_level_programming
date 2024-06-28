@@ -24,7 +24,7 @@ if __name__ == "__main__":
                                      db=db_name)
         with connection:
             cursor = connection.cursor()
-            query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+            query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
             cursor.execute(query.format(state))
             for row in cursor.fetchall():
                 print(row)
