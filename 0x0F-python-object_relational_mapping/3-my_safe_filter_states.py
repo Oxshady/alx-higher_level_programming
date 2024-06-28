@@ -14,7 +14,7 @@ if __name__ == "__main__":
     db_user = argv[1]
     db_pass = argv[2]
     db_name = argv[3]
-    state = argv[4]
+    state = argv[4].replace('"', '').replace(";", '')
 
     try:
         connection = MySQLdb.connect(host='localhost',
