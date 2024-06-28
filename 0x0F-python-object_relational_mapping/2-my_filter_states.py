@@ -19,6 +19,7 @@ try:
         cursor = connection.cursor()
         with cursor:
             cursor.execute(s, (state,))
-            print(cursor.fetchone())
+            for row in cursor.fetchall():
+                print(row)
 except MySQLdb.Error as err:
     print(f"mysqldb error the error is:{err}")
