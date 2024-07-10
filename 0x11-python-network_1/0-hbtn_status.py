@@ -4,7 +4,6 @@
  https://alx-intranet.hbtn.io/status
 """
 
-import urllib
 import urllib.request
 
 req = urllib.request.Request("https://alx-intranet.hbtn.io/status")
