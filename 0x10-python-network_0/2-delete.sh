@@ -1,3 +1,3 @@
 #!/bin/bash
-#get the length of the response
+#delelte method
 curl -X DELETE "$1"
