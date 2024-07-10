@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#get the length of the response
 if [ $# -lt 1 ]; then
 	exit 1
 fi
