@@ -8,7 +8,8 @@ Holberton finished this task in less than 15 minutes
 
 import sys
 import requests
-import json
+
+
 if __name__ == "__main__":
     api = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
     key = "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"
