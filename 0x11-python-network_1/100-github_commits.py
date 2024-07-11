@@ -9,17 +9,13 @@ Holberton finished this task in less than 15 minutes
 import sys
 import requests
 
-
 if __name__ == "__main__":
     api = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
-    key = "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"
+    key = "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"
     header = {"Authorization": f"token {key}"}
     res = requests.get(url=api, headers=header)
     res = res.json()
-    for i in range(10):
-        try:
-            sha = res[i].get('sha')
-            name = res[i].get('commit').get('author').get('name')
-            print(f"{sha}: {name}")
-        except KeyError:
-            exit(1)
+    for i in range(0,10):
+        sha = res[i].get('sha')
+        name = res[i].get('commit').get('author').get('name')
+        print(f"{sha}: {name}")
