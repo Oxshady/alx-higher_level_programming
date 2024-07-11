@@ -21,5 +21,5 @@ if __name__ == "__main__":
             print(f"[{res['id']}] {res['name']}")
         else:
             print("No result")
-    except Exception as e:
+    except (ValueError, IndexError):
         print("Not a valid JSON")
