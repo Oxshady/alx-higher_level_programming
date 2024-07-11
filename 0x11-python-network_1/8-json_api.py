@@ -10,7 +10,7 @@ import sys
 
 if __name__ == "__main__":
     value = sys.argv[1]
-    url = "my-json-server.typicode.com/user/repo/posts/"
+    url = "http://0.0.0.0:5000/search_user"
     q = {"q": ""}
     if value:
         q = {"q": value}
