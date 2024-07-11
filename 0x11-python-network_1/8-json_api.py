@@ -15,11 +15,11 @@ if __name__ == "__main__":
     if value:
         q = {"q": value}
     res = requests.post(url=url, data=q)
-    if "application/json" in res.headers.get('Content-Type'):
+    try:
         res = res.json
         if res:
             print(f"[{res['id']}] {res['name']}")
         else:
             print("No result")
-    else:
+    except ValueError:
         print("Not a valid JSON")
