@@ -30,8 +30,11 @@ if __name__ == "__main__":
                            """, (str(argv[4]), ))
             result = cursor.fetchall()
             len = len(result)
-            for i in range(len):
-                if i == len - 1:
-                    print(result[i][0])
-                else:
-                    print(result[i][0], end=", ")
+            if result:
+                for i in range(len):
+                    if i == len - 1:
+                        print(result[i][0])
+                    else:
+                        print(result[i][0], end=", ")
+            else:
+                print()
