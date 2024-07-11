@@ -14,7 +14,7 @@ if __name__ == "__main__":
     res = requests.get(url=url)
     try:
         x_request = res.headers['X-Request-Id']
-    except:
-        exit(-1)    
+    except Exception as e:
+        exit(-1)
     if x_request:
         print(x_request)
