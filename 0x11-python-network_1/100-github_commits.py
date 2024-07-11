@@ -15,6 +15,9 @@ if __name__ == "__main__":
     res = requests.get(url=api)
     res = res.json()
     for i in range(0, 10):
-        sha = res[i].get('sha')
-        name = res[i].get('commit').get('author').get('name')
-        print(f"{sha}: {name}")
+        try:
+            sha = res[i].get('sha')
+            name = res[i].get('commit').get('author').get('name')
+            print(f"{sha}: {name}")
+        except Exception:
+            exit(1)
