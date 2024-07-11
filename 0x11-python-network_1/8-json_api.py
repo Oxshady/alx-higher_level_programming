@@ -16,7 +16,7 @@ if __name__ == "__main__":
         q = {"q": value}
     res = requests.post(url=url, data=q)
     try:
-        res = res.json
+        res = res.json()
         if res:
             print(f"[{res['id']}] {res['name']}")
         else:
