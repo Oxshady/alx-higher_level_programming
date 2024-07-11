@@ -1,6 +1,6 @@
 #!/bin/python3
 """
-The Holberton School staff evaluates candidates applying 
+The Holberton School staff evaluates candidates applying
 for a back-end position with multiple technical challenges
 Only 17% of applicants for a backend position at
 Holberton finished this task in less than 15 minutes
