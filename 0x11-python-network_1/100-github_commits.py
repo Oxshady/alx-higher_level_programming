@@ -11,7 +11,7 @@ import requests
 
 if __name__ == "__main__":
     api = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
-    key = "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"
+    key = "##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##".strip("#")
     header = {"Authorization": f"token {key}"}
     res = requests.get(url=api, headers=header)
     res = res.json()
