@@ -9,7 +9,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    value = sys.argv[1]
+    try:
+        value = sys.argv[1]
+    except IndexError:
+        pass
     url = "http://0.0.0.0:5000/search_user"
     q = {"q": ""}
     if value:
@@ -21,5 +24,5 @@ if __name__ == "__main__":
             print(f"[{res['id']}] {res['name']}")
         else:
             print("No result")
-    except (ValueError, IndexError):
+    except ValueError:
         print("Not a valid JSON")
