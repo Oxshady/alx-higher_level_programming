@@ -12,6 +12,9 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     res = requests.get(url=url)
-    x_request = res.headers['X-Request-Id']
+    try:
+        x_request = res.headers['X-Request-Id']
+    except:
+        exit(-1)    
     if x_request:
         print(x_request)
