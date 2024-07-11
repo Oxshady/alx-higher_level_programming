@@ -9,14 +9,13 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    q = {"q": ""}
     try:
         value = sys.argv[1]
+        q = {"q": value}
     except IndexError:
         pass
     url = "http://0.0.0.0:5000/search_user"
-    q = {"q": ""}
-    if value:
-        q = {"q": value}
     res = requests.post(url=url, data=q)
     try:
         res = res.json()
