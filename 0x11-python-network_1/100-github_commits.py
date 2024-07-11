@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 """
 The Holberton School staff evaluates candidates applying
 for a back-end position with multiple technical challenges
