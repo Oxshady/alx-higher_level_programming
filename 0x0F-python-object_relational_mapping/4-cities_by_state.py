@@ -16,10 +16,10 @@ if __name__ == "__main__":
     db_name = argv[3]
 
     with MySQLdb.connect(host='localhost',
-                                     port=3306,
-                                     user=db_user,
-                                     passwd=db_pass,
-                                     db=db_name) as connector:
+                         port=3306,
+                         user=db_user,
+                         passwd=db_pass,
+                         db=db_name) as connector:
         with connector.cursor() as cursor:
             cursor.execute("""select cities.id ,
                            cities.name,
