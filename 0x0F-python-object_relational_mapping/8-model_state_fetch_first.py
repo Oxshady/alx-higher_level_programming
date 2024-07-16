@@ -17,3 +17,5 @@ if __name__ == "__main__":
         obj = session.query(State).order_by(State.id).first()
         if obj:
             print(f"{obj.id}: {obj.name}")
+        else:
+            print("Nothing")
