@@ -15,4 +15,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     with Session() as session:
         obj = session.query(State).order_by(State.id).first()
-        print(f"{obj.id}: {obj.name}")
+        if obj:
+            print(f"{obj.id}: {obj.name}")
