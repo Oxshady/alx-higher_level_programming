@@ -2,7 +2,7 @@
 
 """
 implement object relation mapping using sqlalchemy
-delete object
+select some data and take adv of relation
 """
 
 from sqlalchemy import create_engine
