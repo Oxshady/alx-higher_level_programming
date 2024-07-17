@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 implement object relation mapping using sqlalchemy
-get all rows that contain a character
+fet object with specific name
 """
 
 from sqlalchemy import create_engine
