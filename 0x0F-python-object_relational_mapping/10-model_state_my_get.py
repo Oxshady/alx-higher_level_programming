@@ -10,9 +10,8 @@ from model_state import Base, State
 from sys import argv
 
 
-state_name = argv[4]
-
 if __name__ == "__main__":
+    state_name = argv[4]
     url = f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
     engine = create_engine(url)
     Session = sessionmaker(bind=engine)
