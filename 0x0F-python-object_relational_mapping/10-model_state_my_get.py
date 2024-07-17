@@ -4,7 +4,7 @@ implement object relation mapping using sqlalchemy
 get all rows that contain a character
 """
 
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from sys import argv
@@ -17,6 +17,6 @@ if __name__ == "__main__":
     engine = create_engine(url)
     Session = sessionmaker(bind=engine)
     with Session() as session:
-        x = session.query(func.count(State.id))
+        x = session.query(State.id)
         x = x.filter_by(name=state_name).first()
-        print(x[0])
+        print(x.id)
