@@ -19,4 +19,7 @@ if __name__ == "__main__":
     with Session() as session:
         x = session.query(State.id)
         x = x.filter_by(name=state_name).first()
-        print(x.id)
+        if x:
+            print(x.id)
+        else:
+            print("Not found")
