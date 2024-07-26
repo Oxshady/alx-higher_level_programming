@@ -10,9 +10,6 @@ from sqlalchemy import Integer, String
 from sqlalchemy.orm import (declarative_base, mapped_column,
                             Mapped, relationship)
 Base = declarative_base()
-import relationship_city
-from typing import List
-
 
 
 class State(Base):
@@ -21,6 +18,8 @@ class State(Base):
         id (int): id of state
         name (string): name of state
     """
+    import relationship_city
+    from typing import List
     __tablename__ = "states"
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(128), nullable=False)
