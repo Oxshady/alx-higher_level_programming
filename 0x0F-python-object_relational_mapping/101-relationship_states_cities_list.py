@@ -15,7 +15,9 @@ if __name__ == "__main__":
     with Session() as session:
         State = relationship_state.State
         City = relationship_city.City
-        data = session.query(State).outerjoin(City).order_by(State.id, City.id).all()
+        data = session.query(State).outerjoin(City).order_by(
+            State.id, City.id
+            ).all()
         for state in data:
             print(f"{state.id}: {state.name}")
             if state.cities:
