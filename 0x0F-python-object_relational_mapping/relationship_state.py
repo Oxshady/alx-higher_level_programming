@@ -9,11 +9,10 @@ mapping class state to states table in relational db
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import (declarative_base, mapped_column,
                             Mapped, relationship)
-from sys import argv
+Base = declarative_base()
 import relationship_city
 from typing import List
 
-Base = declarative_base()
 
 
 class State(Base):

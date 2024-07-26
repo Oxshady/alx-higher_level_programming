@@ -9,10 +9,10 @@ mapping class city to  cities table in relational db
 from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import declarative_base, mapped_column, Mapped
 from sys import argv
-from relationship_state import Base
+import relationship_state
 
 
-class City (Base):
+class City (relationship_state.Base):
     """City represent table in relational db
     Args:
         id (int): id of city

@@ -8,7 +8,7 @@ from sys import argv
 import relationship_city
 import relationship_state
 if __name__ == "__main__":
-    base = relationship_city.Base
+    base = relationship_state.Base
     State = relationship_state.State
     City = relationship_city.City
     url = f"mysql://{argv[1]}:{argv[2]}@localhost:3306/{argv[3]}"
