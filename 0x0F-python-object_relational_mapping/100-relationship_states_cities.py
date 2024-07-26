@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+module of persisting object in tables
+"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
