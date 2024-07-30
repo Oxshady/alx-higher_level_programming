@@ -5,6 +5,6 @@ request.get(url, (err, resp) => {
   if (err) {
     return
   } else {
-    console.log(resp.statusCode);
+    console.log('code: ' + resp.statusCode);
   }
 });
