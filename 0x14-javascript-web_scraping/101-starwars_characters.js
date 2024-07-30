@@ -6,9 +6,8 @@ request.get(url + moveid, { json: true }, (err, resp, body) => {
   if (err) {
     console.log(err);
   } else {
-    const characters = body.characters;
-    for (const i in characters) {
-      request.get(characters[i], { json: true }, (err, res, body) => {
+    for (const i in body.characters) {
+      request.get(body.characters[i], { json: true }, (err, res, body) => {
         if (err) {
           console.log(err);
         } else {
