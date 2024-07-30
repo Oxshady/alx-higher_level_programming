@@ -6,14 +6,15 @@ request.get(url + moveid, { json: true }, (err, resp, body) => {
   if (err) {
     console.log(err);
   } else {
-    for (const i in body.characters) {
-      request.get(body.characters[i], { json: true }, (err, res, body) => {
+    const characters = body.characters;
+    characters.forEach((character) => {
+      request.get(character, { json: true }, (err, res, body) => {
         if (err) {
           console.log(err);
         } else {
           console.log(body.name);
         }
       });
-    }
+    });
   }
 });
